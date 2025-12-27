@@ -1,29 +1,21 @@
-import { useState } from 'react'
 import './App.css'
-import { Button } from '@/components/ui/button'
 import { LiveBanner } from '@/components/LiveBanner'
 
 function App() {
-  const [message, setMessage] = useState("")
-
   return (
-    <>
-      <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-4">
-        {/* LiveBanner component integrated */}
-        <LiveBanner className="w-full max-w-2xl" />
-        
-        <div className="flex flex-col items-center gap-4">
-          <h1 className="text-2xl font-bold">
-            Your canvas is ready
-          </h1>
-          <h2 className="text-lg text-gray-500">
-            Start building your project!
-          </h2>
-          <Button onClick={() => setMessage("Hello, world!")}>Show message</Button>
-          {message && <p className="text-lg text-gray-500">{message}</p>}
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-emerald-100 dark:from-emerald-950 dark:via-gray-900 dark:to-gray-950">
+      <div className="w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center gap-8 animate-fade-in">
+          {/* LiveBanner component - the main feature */}
+          <LiveBanner className="w-full" />
+          
+          {/* Subtle tagline */}
+          <p className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide">
+            Building something amazing
+          </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

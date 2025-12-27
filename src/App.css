@@ -1,6 +1,6 @@
+/* App-specific styles */
+/* Root element no longer constrains width - using full viewport */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
 }
