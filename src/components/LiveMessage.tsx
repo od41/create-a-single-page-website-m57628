@@ -13,9 +13,13 @@ export const LiveMessage: React.FC<LiveMessageProps> = ({ className = '' }) => {
   }, []);
 
   return (
-    <div className={`relative flex flex-col items-center justify-center gap-8 px-4 ${className}`}>
+    <div 
+      className={`relative flex flex-col items-center justify-center gap-8 px-4 ${className}`}
+      role="banner"
+      aria-label="Youcode launch announcement"
+    >
       {/* Floating background particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         <div 
           className="floating-particle bg-gradient-to-br from-green-400/20 to-emerald-500/20 animate-float"
           style={{
@@ -58,16 +62,18 @@ export const LiveMessage: React.FC<LiveMessageProps> = ({ className = '' }) => {
             fontSize: 'clamp(2.5rem, 8vw, 6rem)',
             lineHeight: '1.1'
           }}
+          aria-label="Youcode is live"
         >
           <span className="gradient-bg-animated inline-block animate-pulse-glow">
             {mounted ? (
               messageText.split('').map((char, index) => (
                 <span
-                  key={index}
+                  key={`char-${index}`}
                   className={`inline-block animate-char-appear stagger-${Math.min(index + 1, 8)}`}
                   style={{
                     animationDelay: `${index * 0.05}s`
                   }}
+                  aria-hidden="true"
                 >
                   {char === ' ' ? '\u00A0' : char}
                 </span>
@@ -84,11 +90,16 @@ export const LiveMessage: React.FC<LiveMessageProps> = ({ className = '' }) => {
           style={{
             mixBlendMode: 'overlay'
           }}
+          aria-hidden="true"
         />
       </div>
       
       {/* Celebration emojis with enhanced animations */}
-      <div className="flex gap-4 sm:gap-6 text-3xl sm:text-4xl md:text-5xl z-10">
+      <div 
+        className="flex gap-4 sm:gap-6 text-3xl sm:text-4xl md:text-5xl z-10"
+        role="img"
+        aria-label="Celebration with party popper, rocket, and sparkles"
+      >
         <span 
           className="animate-bounce-elastic interactive-glow cursor-default smooth-transition hover:scale-125"
           style={{ animationDelay: '0ms' }}
@@ -134,6 +145,7 @@ export const LiveMessage: React.FC<LiveMessageProps> = ({ className = '' }) => {
             width: '60%',
             animationDelay: '1s'
           }}
+          aria-hidden="true"
         />
       </div>
 
@@ -141,8 +153,11 @@ export const LiveMessage: React.FC<LiveMessageProps> = ({ className = '' }) => {
       <div 
         className="flex items-center gap-2 animate-fade-in-up z-10"
         style={{ animationDelay: '1.2s' }}
+        role="status"
+        aria-live="polite"
+        aria-label="System status: Online"
       >
-        <div className="relative flex h-3 w-3">
+        <div className="relative flex h-3 w-3" aria-hidden="true">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
         </div>
