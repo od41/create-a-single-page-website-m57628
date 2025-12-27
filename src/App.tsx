@@ -3,11 +3,9 @@ import { LiveMessage } from '@/components/LiveMessage'
 
 function App() {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center min-h-screen px-4">
-        <LiveMessage />
-      </div>
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen px-4">
+      <LiveMessage />
+    </div>
   )
 }
 
