@@ -14,14 +14,14 @@ export function LiveBanner({
   return (
     <div 
       className={cn(
-        'animate-fade-in flex items-center gap-3 rounded-lg border border-emerald-200 bg-gradient-to-r from-emerald-50 to-white p-4 shadow-sm dark:border-emerald-900 dark:from-emerald-950 dark:to-gray-950',
+        'flex items-center gap-3 rounded-lg border border-emerald-200 bg-gradient-to-r from-emerald-50 to-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:border-emerald-900 dark:from-emerald-950 dark:to-gray-950',
         className
       )}
     >
       {/* Pulsing live indicator icon */}
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex h-8 w-8 items-center justify-center">
         <Radio 
-          className="h-5 w-5 text-emerald-600 dark:text-emerald-400 animate-pulse" 
+          className="h-6 w-6 text-emerald-600 dark:text-emerald-400 animate-pulse" 
           fill="currentColor"
         />
         {/* Ping animation ring */}
@@ -29,7 +29,7 @@ export function LiveBanner({
       </div>
 
       {/* Message text */}
-      <span className="text-base font-semibold text-gray-900 dark:text-gray-100 sm:text-lg">
+      <span className="text-lg font-semibold text-gray-900 dark:text-gray-100 sm:text-xl md:text-2xl">
         {message}
       </span>
 

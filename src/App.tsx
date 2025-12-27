@@ -10,7 +10,7 @@ function App() {
           <LiveBanner className="w-full" />
           
           {/* Subtle tagline */}
-          <p className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide">
+          <p className="text-emerald-600 dark:text-emerald-400 text-sm font-medium tracking-wide animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Building something amazing
           </p>
         </div>
