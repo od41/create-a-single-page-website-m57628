@@ -1,6 +1,1 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* Minimal App styles - centering is handled by Tailwind classes in App.tsx */
