@@ -7,15 +7,24 @@ function App() {
   const [message, setMessage] = useState("")
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 gap-8 bg-white">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 gap-8 md:gap-12 bg-gradient-to-br from-gray-50 to-gray-100">
       <AnnouncementBanner message="Youcode is live" />
       
-      <div className="flex flex-col items-center gap-4">
-        <h2 className="text-lg text-gray-500">
+      <div className="flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'backwards' }}>
+        <h2 className="text-base sm:text-lg md:text-xl text-gray-600 font-medium">
           Start building your project!
         </h2>
-        <Button onClick={() => setMessage("Hello, world!")}>Show message</Button>
-        {message && <p className="text-lg text-gray-500">{message}</p>}
+        <Button 
+          onClick={() => setMessage("Hello, world!")} 
+          className="transition-all hover:scale-105 active:scale-95"
+        >
+          Show message
+        </Button>
+        {message && (
+          <p className="text-base sm:text-lg text-gray-600 font-medium animate-fade-in">
+            {message}
+          </p>
+        )}
       </div>
     </div>
   )
